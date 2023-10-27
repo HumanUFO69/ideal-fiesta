@@ -35,11 +35,11 @@ jobs:
         run: curl -O https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/tif.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -ua -i ./tif.txt -o ./tifixed.txt
+        run: cut-cdn -a -ua -i ./tif.txt -o ./tifwhitelist.txt
 
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           # Commit message
           commit_message: automatic/regular ip address updates
-          file_pattern: ./*.txt
+          file_pattern: ./tif*.txt
