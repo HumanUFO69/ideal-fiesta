@@ -32,7 +32,7 @@ jobs:
         run: go install github.com/ImAyrix/cut-cdn@latest
 
       - name: Get tif.txt
-        run: curl -O https://github.com/hagezi/dns-blocklists/raw/main/ips/tif.txt
+        run: curl -O https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/tif.txt
 
       - name: Run cut-cdn
         run: cut-cdn -a -i ./tif.txt -o ./tifixed.txt
