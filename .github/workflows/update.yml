@@ -27,6 +27,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v4
+        with:
+          go-version: 'stable'
+      - run: go run hello.go
 
       - name: Install cut-cdn
         run: go install github.com/ImAyrix/cut-cdn@latest
@@ -35,7 +38,7 @@ jobs:
         run: curl -O https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/tif.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -t 4 -i ./tif.txt -o ./tifwhitelist.txt
+        run: cut-cdn -a -i ./tif.txt -o ./tifwhitelist.txt
 
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
