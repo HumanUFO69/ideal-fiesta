@@ -29,7 +29,6 @@ jobs:
       - uses: actions/setup-go@v4
         with:
           go-version: 'stable'
-      - run: go run hello.go
 
       - name: Install cut-cdn
         run: go install github.com/ImAyrix/cut-cdn@latest
