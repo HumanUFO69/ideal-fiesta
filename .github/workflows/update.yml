@@ -31,9 +31,6 @@ jobs:
       - name: Install cut-cdn
         run: go install github.com/ImAyrix/cut-cdn@latest
 
-      - name: Install curl
-        run: sudo apt install curl
-
       - name: Get tif.txt
         run: curl -O https://github.com/hagezi/dns-blocklists/raw/main/ips/tif.txt
 
