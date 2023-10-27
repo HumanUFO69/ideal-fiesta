@@ -35,7 +35,7 @@ jobs:
         run: curl -O https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/tif.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -ua -a -i ./tif.txt -o ./tifwhitelist.txt
+        run: cut-cdn -t 4 -i ./tif.txt -o ./tifwhitelist.txt
 
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
