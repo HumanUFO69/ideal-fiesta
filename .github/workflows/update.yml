@@ -42,4 +42,4 @@ jobs:
         with:
           # Commit message
           commit_message: automatic/regular ip address updates
-          file_pattern: ./tif*.txt
+          file_pattern: ./tif.txt ./tifwhitelist.txt
