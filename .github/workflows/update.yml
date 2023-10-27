@@ -16,7 +16,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: macos-13
     permissions:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
@@ -38,7 +38,7 @@ jobs:
         run: curl -O https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/tif.txt
 
       - name: Run cut-cdn
-        run: cut-cdn -a -i ./tif.txt -o ./tifwhitelist.txt
+        run: cut-cdn -a -t 8 -i ./tif.txt -o ./tifwhitelist.txt
 
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
